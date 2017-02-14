@@ -15,10 +15,10 @@
   O(nlogn)
 
   Mean execution times for dataset of size n:
-  Batch size: <# of times each dataset size was run>
-  n=1       time: 1 
-  n=10      time: 10x10
-  n=100     time: 100x100
+  Batch size: 10000000
+  n=1       time: 40, 41, 40
+  n=10      time: 543, 566, 547
+  n=100     time: 6423, 6492, 6440
   ...
   n=<huge>  time: hugexhuge
 
@@ -33,27 +33,35 @@
   The sum of both the split, which is n(log base 2 of n) and the merging which is n(log base 2 of n) is 2n(log base 2 of n).
   2n(log base 2 of n) is simplified to O(n log n).
 
+  =======================================*/
+
 public class MergeSortTester 
 {
 
     /******************************
      * execution time analysis 
-     * <INSERT YOUR DESCRIPTION HERE OF 
-     *  YOUR APPARATUS FOR GENERATING EXECUTION 
-     *  TIME DATA...>
+     Depending on the lengths of arrays we wanted to choose, we put those lengths into an int[] array and then, populate an array with numbers, then mess up the array,
+     start the timer, run the sort program, end the timer and then average it all.
      ******************************/
-    public static void main( String[] args ) 
-    { long avg = 0;
-      for(int x = 0; x < 20; x ++){
-        MergeSort.mess(a);
-        long startTime = System.nanoTime();
-        MergeSort.sort(a);
-        long endTime   = System.nanoTime();
-        long duration  = endTime - startTime;
-        avg += duration;
-      }
-     avg /= 20;
-     System.out.println("Average time for array length " + a.length + " is " + avg);
+    public static void main( String[] args ) {
+	int[] lengths = {1, 8, 10, 16, 25, 100};
+	for(int length : lengths){
+	    int[] a = new int[length];
+	    for(int r = 0; r < a.length; r ++){
+		a[r] = r;
+	    }
+	    long avg = 0;
+	    for(int x = 0; x < 10000000; x ++){
+		MergeSort.mess(a);
+		long startTime = System.nanoTime();
+		MergeSort.sort(a);
+		long endTime   = System.nanoTime();
+		long duration  = endTime - startTime;
+		avg += duration;
+	    }
+	    avg /= 10000000;
+	    System.out.println("Average time for array length " + a.length + " is " + avg);
+	}
     }//end main
 
 }//end class
