@@ -1,15 +1,16 @@
 //PowerPuff Girls (Connie Lei, Yedoh Kang, Donia Tung)
 //APCS2 pd1
 //HW07 -- What Does the Data Say?
-//2017-02-13
-
-
+//2017-02-15
 
 /*======================================
   class MergeSortTester
 
   ALGORITHM:
-  The algorithm works using recursion and a helper method entitled merge that takes two sorted lists and merges them. The recursion in sort checks if the inputted array is less than or equal to 1. If so, it returns that array, and if not, it creates two lists of roughly half the length of the original array. Then, merge is called on the "sort" of the two halfs of the original list.
+  The algorithm works using recursion and a helper method entitled merge that takes two sorted lists and merges them. 
+  The recursion in sort checks if the inputted array is less than or equal to 1. 
+  If so, it returns that array, and if not, it creates two lists of roughly half the length of the original array. 
+  Then, merge is called on the "sort" of the two halfs of the original list.
 
   BIG-OH CLASSIFICATION OF ALGORITHM:
   O(nlogn)
