@@ -21,17 +21,14 @@
   n=10      time: 543, 566, 547
   n=100     time: 6423, 6492, 6440
   ...
-  n=<huge>  time: hugexhuge
+  n=<huge>  time: huge * (log base 2 of huge)
 
   ANALYSIS:
-  We iterate through the array on every single halve of the array, but the number of halves is determined by log base 2 of n.
-  If n was equal to 8, it would mean that to split an array of 8 into 8 separate arrays of 1, you would need to do 3 halves.
-  Each of the halves we do means we iterate through the entire total array, even if there are two arrays of length 4, we still
-  need to go through each array of 4 to create another two arrays of 2.
-  Once we have arrays of length 1, we need to merge the arrays. Everytime we merge, we iterate through the total length of
-  the arrays. The number of iterations is the same as splitting up the array--log base 2 of n. Merge is a O(n) algorithm, but
-  we perform O(n) log base 2 of n times.
-  The sum of both the split, which is n(log base 2 of n) and the merging which is n(log base 2 of n) is 2n(log base 2 of n).
+  We iterate through the array on every single half of the array, but the number of halves is determined by log base 2 of n.
+  If n was equal to 8, it would mean that to split an array of 8 into 8 separate arrays of 1, you would need to split it in half 3 times.
+  Each of the splits requires us to iterate through the entire total array, even if there are two arrays of length 4, we still need to go through each array of 4 to create another two arrays of 2.
+  Once we have arrays of length 1, we need to merge the arrays. Everytime we merge, we iterate through the total length of the arrays. The number of iterations is the same as splitting up the array--log base 2 of n. Merge is a O(n) algorithm, but we perform O(n) log base 2 of n times.
+  The sum of both the split, which is n(log base 2 of n), and the merging, which is n(log base 2 of n), is 2n(log base 2 of n).
   2n(log base 2 of n) is simplified to O(n log n).
 
   =======================================*/
