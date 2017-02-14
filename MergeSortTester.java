@@ -1,4 +1,4 @@
-//PowerPuff Girls (Connie Lei, Yedoh Kang, Donia Tugn)
+//PowerPuff Girls (Connie Lei, Yedoh Kang, Donia Tung)
 //APCS2 pd1
 //HW07 -- What Does the Data Say?
 //2017-02-13
