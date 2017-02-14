@@ -17,9 +17,9 @@
 
   Mean execution times for dataset of size n:
   Batch size: 10000000
-  n=1       time: 40, 41, 40
-  n=10      time: 543, 566, 547
-  n=100     time: 6423, 6492, 6440
+  n=1       time: 17, 17, 17
+  n=10      time: 508, 509, 508
+  n=100     time: 5989, 6068, 6061
   ...
   n=<huge>  time: huge * (log base 2 of huge)
 
