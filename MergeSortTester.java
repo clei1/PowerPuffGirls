@@ -50,7 +50,8 @@ public class MergeSortTester
 		a[r] = r;
 	    }
 	    long avg = 0;
-	    for(int x = 0; x < 10000000; x ++){
+	    int numTest = 10000000;
+	    for(int x = 0; x < numTest; x ++){
 		MergeSort.mess(a);
 		long startTime = System.nanoTime();
 		MergeSort.sort(a);
@@ -58,7 +59,7 @@ public class MergeSortTester
 		long duration  = endTime - startTime;
 		avg += duration;
 	    }
-	    avg /= 10000000;
+	    avg /= numTest;
 	    System.out.println("Average time for array length " + a.length + " is " + avg);
 	}
     }//end main
