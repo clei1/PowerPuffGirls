@@ -29,7 +29,7 @@
   Each of the splits requires us to iterate through the entire total array, even if there are two arrays of length 4, we still need to go through each array of 4 to create another two arrays of 2.
   Once we have arrays of length 1, we need to merge the arrays. Everytime we merge, we iterate through the total length of the arrays. 
   The number of iterations is the same as splitting up the array--log base 2 of n. Merge is a O(n) algorithm, but we perform O(n) log base 2 of n times.
-  The sum of both the split, which is n(log base 2 of n), and the merging, which is n(log base 2 of n), is 2n(log base 2 of n).
+  The sum of both the splitting, which is n(log base 2 of n), and the merging, which is n(log base 2 of n), is 2n(log base 2 of n).
   2n(log base 2 of n) is simplified to O(n log n).
 
   =======================================*/
