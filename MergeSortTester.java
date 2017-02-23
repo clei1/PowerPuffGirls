@@ -33,6 +33,8 @@
   2n(log base 2 of n) is simplified to O(n log n).
 
   =======================================*/
+import java.util.*;
+import java.io.*;
 
 public class MergeSortTester 
 {
@@ -43,24 +45,36 @@ public class MergeSortTester
      start the timer, run the sort program, end the timer and then average it all.
      ******************************/
     public static void main( String[] args ) {
-	int[] lengths = {1, 8, 10, 16, 25, 100};
-	for(int length : lengths){
-	    int[] a = new int[length];
-	    for(int r = 0; r < a.length; r ++){
-		a[r] = r;
+
+	try{
+	    PrintWriter outputStream = new PrintWriter("test.csv");
+	    int[] lengths = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 25, 30, 35, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 200, 300, 400, 450, 500, 550, 600, 700, 800, 1000};
+	    for(int length: lengths){
+	    //for(int length = 0; length < 10000; length ++){
+		int[] a = new int[length];
+		for(int r = 0; r < a.length; r ++){
+		    a[r] = r;
+		}
+		long avg = 0;
+		int numTest = 100000;
+		for(int x = 0; x < numTest; x ++){
+		    MergeSort.mess(a);
+		    long startTime = System.nanoTime();
+		    MergeSort.sort(a);
+		    long endTime   = System.nanoTime();
+		    long duration  = endTime - startTime;
+		    avg += duration;
+		    //outputStream.print(a.length + ", " + duration + "\n");
+		}
+		avg /= numTest;
+		System.out.println("Average time for array length " + a.length + " is " + avg);
+		outputStream.print(a.length + ", " + avg + "\n");
 	    }
-	    long avg = 0;
-	    int numTest = 10000000;
-	    for(int x = 0; x < numTest; x ++){
-		MergeSort.mess(a);
-		long startTime = System.nanoTime();
-		MergeSort.sort(a);
-		long endTime   = System.nanoTime();
-		long duration  = endTime - startTime;
-		avg += duration;
-	    }
-	    avg /= numTest;
-	    System.out.println("Average time for array length " + a.length + " is " + avg);
+
+	    outputStream.close();
+	}
+	catch(Exception e){
+	    System.out.println("Something went wrong");
 	}
     }//end main
 
