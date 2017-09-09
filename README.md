@@ -1,9 +1,7 @@
 # PowerPuffGirls
 ## APCS2 pd1 (Yedoh Kang, Connie Lei, Donia Tung)
 
-<br />
 ### MergeSort Algorithm Runtime & Breakdown
-<br />
 #### Runtime: O(nlogn)
 
 #### Brief Explanation:
