@@ -10,4 +10,4 @@
 
 #### Graphs + Flowchart:
 ##### Look at the Merge-Sort PDF in the repo
-##### Click [here] (https://docs.google.com/document/d/1viPjuUBQELM0j-bif1lNVzls43u4c5pn4LOFdzPCHCM/pub)
+##### Click [here](https://docs.google.com/document/d/1viPjuUBQELM0j-bif1lNVzls43u4c5pn4LOFdzPCHCM/pub)
